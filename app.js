@@ -3,7 +3,7 @@ const ui = new UI;
 
 // *Search input
 const searchUser = document.querySelector('#searchUser');
-searchUser.addEventListener('keyup', (e) => {
+searchUser.addEventListener('submit', (e) => {
   const userText = e.target.value;
 
   if(userText !== ''){
@@ -15,6 +15,7 @@ searchUser.addEventListener('keyup', (e) => {
         } else {
           // *Show Profile
           ui.showProfile(data.profile);
+          ui.showRepos(data.repos);
         }
       });
   } else {

@@ -29,6 +29,28 @@ class UI {
       <h3 class="page-heading mb-3">Latest Repos</h3>
     `;
   }
+  showRepos(repos){
+    let output = '';
+
+    repos.forEach (function(repo) {
+      output += `
+      <div class="card card-body mb-2">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+          </div>
+          <div class="col-md-6">
+            <span class="badge bg-primary">Stars: ${repo.stargazers_count}</span>
+            <span class="badge bg-success">Watchers: ${repo.watchers_count}</span>
+            <span class="badge bg-secondary">Forks: ${repo.forks_count}</span>
+          </div>
+        </div>
+      </div>
+      `;
+    });
+
+    document.querySelector('#repos').innerHTML = output;
+  }
   showAlert(message, className) {
     this.clearAlert();
     // *create div
