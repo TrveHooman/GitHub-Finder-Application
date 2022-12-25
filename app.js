@@ -13,10 +13,10 @@ searchUser.addEventListener('keyup', (e) => {
           // *Show Alert
         } else {
           // *Show Profile
+          ui.showProfile(data.profile);
         }
       })
   } else {
     // *Clear Profile
   }
-  e.preventDefault();
 })
